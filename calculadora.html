@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link href="style.css" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/uchiyama" rel="stylesheet">
+<style>
+    body {
+        background: linear-gradient(to top, rgb(235, 228, 228), rgba(193, 182, 240, 0.575));
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        transform: scale(2);
+        transform-origin: top left;
+
+    }
+
+    h1 {
+        font-family: 'Uchiyama', sans-serif;
+    }
+
+    #numero1 {
+        border-radius: 12px;
+        width: 55px;
+        height: 35px;
+        border: 1px;
+        border-color: rgb(112, 150, 255);
+        border-style: solid;
+        box-shadow: 2px 2px 0px rgb(175, 188, 197);
+    }
+
+    #numero2 {
+        border-radius: 12px;
+        width: 55px;
+        height: 35px;
+        border: 1px;
+        border-color: rgb(112, 150, 255);
+        border-style: solid;
+        box-shadow: 2px 2px 0px rgb(175, 188, 197);
+    }
+
+    button {
+        height: 30px;
+        width: 30px;
+        border-radius: 20px;
+        border-color: rgb(112, 150, 255);
+        border-style: solid;
+        border: 1px;
+        box-shadow: 2px 2px 0px rgb(175, 188, 197);
+    }
+
+    #saida {
+        font-size: 20px;
+        font-family: 'Uchiyama', sans-serif;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input id="numero1" type="number">
+    <input id="numero2" type="number">
+    <button onclick="soma()">+</button>
+    <button onclick="subtracao()">-</button>
+    <button onclick="multiplicacao()">*</button>
+    <button onclick="divisao()">/</button>
+     <p id="saida"></p>
+
+    <script>
+        function soma () {
+            const num1 = Number(document.getElementById("numero1").value)
+            const num2 = Number(document.getElementById("numero2").value)
+            const saida = document.getElementById("saida")
+            saida.innerText = "O resultado é " + (num1 + num2);
+        }
+        function subtracao () {
+            const num1 = Number(document.getElementById("numero1").value)
+            const num2 = Number(document.getElementById("numero2").value)
+            const saida = document.getElementById("saida")
+            saida.innerText = "O resultado é " + (num1 - num2);
+        }
+        function multiplicacao () {
+            const num1 = Number(document.getElementById("numero1").value)
+            const num2 = Number(document.getElementById("numero2").value)
+            const saida = document.getElementById("saida")
+            saida.innerText = "O resultado é " + (num1 * num2);
+        }
+        function divisao () {
+            const num1 = Number(document.getElementById("numero1").value)
+            const num2 = Number(document.getElementById("numero2").value)
+            const saida = document.getElementById("saida")
+            if (num2 == 0) {
+                saida.innerText = "Divisao por zero zé, pode naum"
+            }
+            else {
+                saida.innerText = "O resultado é " + (num1 / num2)
+            }
+        }
+    </script>
+</body>
+</html> 
